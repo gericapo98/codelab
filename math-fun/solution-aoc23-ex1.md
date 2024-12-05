@@ -23,10 +23,10 @@ and so on.
 ---
 
 To extract all natural numbers from a string s, we define $\forall a_i \in s$ the function $\delta(a)$:
-$$\delta(a) = \begin{cases}
+$\delta(a) = \begin{cases}
 1 & \text{if } a \in \mathbb{N}, \\
 0 & \text{otherwise.}
-\end{cases}$$
+\end{cases}$
 
 Using $\delta(a)$, construct a sequence of all digits in s :
 $(a)_s = \{a_i \mid \delta(a_i) = 1, a_i \in s\}$
