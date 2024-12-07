@@ -1,53 +1,58 @@
 package main
 
-import(
-  "bufio"
-  "fmt"
-  "os"
-  "unicode"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"sort"
+	"strconv"
+	"strings"
 )
 
-func extractDigits(line string) (int, int){
-  var firstDigit, lastDigit rune
-  var first bool
-  first := true
-  for _, ch := range line {
-    if first == true {
-      firstDigit = ch
-    } else {
-      lastDigit = ch 
-      first = true
-    } 
-  }
-  return int(firstDigit - '0'), int(lastDigit - '0')
+func main() {
+	file, err := os.Open("input.txt")
+	if err != nil {
+		fmt.Println("Error opening file:", err)
+		return
+	}
+	defer file.Close()
+
+	var leftList, rightList []int
+
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		line := strings.Fields(scanner.Text()) 
+		if len(line) == 2 {
+			left, _ := strconv.Atoi(line[0]) 
+			right, _ := strconv.Atoi(line[1]) 
+			leftList = append(leftList, left)
+			rightList = append(rightList, right)
+		}
+	}
+
+	if err := scanner.Err(); err != nil {
+		fmt.Println("Error reading file:", err)
+		return
+	}
+
+
+	sort.Ints(leftList)
+	sort.Ints(rightList)
+
+
+	var totalDistance int
+	for i := 0; i < len(leftList); i++ {
+		totalDistance += abs(leftList[i] - rightList[i])
+	}
+
+	fmt.Println("The total distance between left and right lists is:", totalDistance)
 }
 
 
-func main(){
-  file, err := os.Open("input.txt")
-  if err != nil {
-    fmt.Println("Error opening file:", err)
-    return
-  }
-  defer file.Close()
-
-  var lines []string
-  scanner := bufio.NewScanner(file)
-  var l, r, sum int
-  sum := 0
-  for scanner.Scan(){
-    l,r = extractDigits(scanner.Text())
-    sum = sum + l + r
-    lines = append(lines,scanner.Text())
-  }
-  
-  if err := scanner.Err(); err != nil{
-    fmt.Println("Error reading file:", err)
-    return
-  }
-  
-  fmt.Println("The total distance between left list and right list is:", sum)
-  
+func abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
 }
-
 
