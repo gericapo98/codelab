@@ -44,7 +44,6 @@ func calculateSum(lines []string) int{
   return total
 }
 
-
 func main(){
   file, err := os.Open("input.txt")
   if err != nil {
@@ -55,11 +54,12 @@ func main(){
 
   var lines []string
   scanner := bufio.NewScanner(file)
+
   for scanner.Scan(){
     lines = append(lines, scanner.Text())
   }
 
-  if err:= scanner.Err(); err != nil{
+  if err := scanner.Err(); err != nil {
     fmt.Println("Error reading file:", err)
     return
   }
