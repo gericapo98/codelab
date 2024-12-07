@@ -35,10 +35,8 @@ func main() {
 		return
 	}
 
-
 	sort.Ints(leftList)
 	sort.Ints(rightList)
-
 
 	var totalDistance int
 	for i := 0; i < len(leftList); i++ {
