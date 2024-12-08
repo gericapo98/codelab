@@ -18,7 +18,7 @@ func calculateMulSum(input string) int {
   for _, match := range matches {
     X, _ := strconv.Atoi(match[1])
     Y, _ := strconv.Atoi(match[2])
-    totalSum += x*y
+    totalSum += X*Y
   }
   return totalSum
 }
