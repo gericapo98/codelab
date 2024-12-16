@@ -1,3 +1,5 @@
+https://go.dev/src/runtime/mbarrier.go?m=text
+
 package main
 import (
 	"bufio"
