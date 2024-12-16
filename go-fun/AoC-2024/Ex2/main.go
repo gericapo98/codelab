@@ -9,10 +9,18 @@ import (
 )
 
 func main() {
-    scanner := bufio.NewScanner(os.Stdin)
+
+    file, err := os.Open("input.txt")
+    if err != nil {
+		  fmt.Println("Error opening file:", err)
+		  return
+	  }
+	  defer file.Close()
+    scanner := bufio.NewScanner(file)
     count := 0
     for scanner.Scan() {
         line := strings.Fields(scanner.Text())
+        //fmt.Println(line)
         if len(line) == 0 {
             continue
         }
@@ -23,6 +31,7 @@ func main() {
                 continue
             }
             nums[i] = n
+            //fmt.Printf("%d", nums[i])
         }
         if len(nums) < 2 {
             continue
