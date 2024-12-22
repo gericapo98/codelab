@@ -8,7 +8,7 @@ import (
 )
 
 type State interface {
-  ID() String
+  ID() string
 }
 
 type Transitions interface {
@@ -28,9 +28,23 @@ type LTS interface {
 type BisimulationCheck interface {
   CheckBisimulation(LTS,LTS) bool
 }
+// https://dev.to/envitab/function-signatures-in-go-38ja
+type ltsImpl struct {
+	states        []State
+	transitions   []Transition
+	initialStates []State
+}
+
+func NewLTS(initial ...State) LTS {
+	return &ltsImpl{
+		states:        []State{},
+		transitions:   []Transition{},
+		initialStates: initial,
+	}
+}
 
 type deadlock_checker bool {
   
 }
-func main(){
-}
+
+
