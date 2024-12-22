@@ -5,7 +5,6 @@ Note: There is an error in the example code on line 22. Vertex (the value type)
 doesn't implement Abser because the Abs method is defined only on *Vertex (the pointer type). 
 * */
 
-
 /*
 * Encapsulation of behavior: Interfaces allow you to define how something should behave.
 * I.e which methods are available wihtout sepcifying how these methods are implemented.
@@ -16,7 +15,8 @@ doesn't implement Abser because the Abs method is defined only on *Vertex (the p
 *
 * You can decouple against an interface. See example below.
 *
-* The examples below are inspired from : https://go.dev/tour/methods/9
+* The examples below and the explaination above are inspired from :
+* https://go.dev/tour/methods/9
 */
 
 package interface_testing
@@ -26,6 +26,9 @@ import (
 	"math"
 )
 
+// Interfaces in Go define what methods a type must have to “satisfy” that interface.
+// Once you have something in your code that behaves just like Abser, you can pass it 
+// and it will just work.
 type Abser interface {
 	Abs() float64
 }
