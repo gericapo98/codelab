@@ -52,11 +52,15 @@ func (l *ltsImpl) States() []State {
 func (l *ltsImpl) Transitions() []Transition {
 	return l.transitions
 }
-
+// adding states to a lts should anticipate duplication and,
+// skip any such occurrence
+func (l *ltsImpl)addState(s []State) error{
+  
+}
 /*
 * TODO::
 * Now that we have a framework for lts.
-* We need to be able to add states passed variadic parameter 
+* We need to be able to add states passed as variadic parameter 
 * into the array of State which should be empty in the beginning.
 */
 

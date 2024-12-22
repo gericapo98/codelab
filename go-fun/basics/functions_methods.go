@@ -8,7 +8,8 @@ import(
  // "slices"
 )
 // the function needs derf for passing by ref but method doesn't
-//
+// functions are tied to a specific task and are not inherently tied
+// to any object or data type
 type Vertex struct {
   X, Y, float64
 }
