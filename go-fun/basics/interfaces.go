@@ -19,6 +19,7 @@ doesn't implement Abser because the Abs method is defined only on *Vertex (the p
 * https://go.dev/tour/methods/9
 */
 
+// In Go, interfaces can hold a pointer to the actual struct implementing the interface.
 package interface_testing
 
 import (
@@ -45,7 +46,7 @@ func (f MyFloat) Abs() float64 {
 func (v *Vertex) Abs() float64 {
     return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
-
+//
 type Vertex struct {
   X, Y float64
 }
@@ -55,12 +56,24 @@ func main() {
 	var a Abser
 
 	f := MyFloat(-math.Sqrt2)
+  // every MyFloat is an Abser, because MyFloat is receiver of Abs method, 
+  // which is the only method in Abser
+  a = f
+
+  // -------------------------------------------------------------------------------
 
 	v := Vertex{3, 4}
+  // every *Vertex is an Abser, because *Vertex is receiver of Abs method
+  // a is implicitly of type Abser, because Abser decouples the type from 
+  // the implementation, which is the Abs method in this case.
+  // This can appear in any package without prearrangement.(not knowing at compile time)
+  // 
+  // compile time
+  // It's the process of converting the code into machine code.
+  // Code is run at runtime. Runtime is after the code is executed.
 
-	a = f  
 	a = &v
-
+  
 	// In the following line, v is a Vertex (not *Vertex)
 	// and does NOT implement Abser.
 	a = v
