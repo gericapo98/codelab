@@ -1,4 +1,5 @@
 package main
+
 import (
     "fmt"
     "github.com/gericapo/codelab/lts/lts_lib"
@@ -7,6 +8,7 @@ import (
 type MyState struct {
     name string
 }
+
 func (m MyState) ID() string {
     return m.name
 }
@@ -18,7 +20,7 @@ type MyTransition struct {
 }
 
 func (t MyTransition) Source() lts_lib.State       { return t.src }
-func (t MyTransition) Label() string             { return t.lbl }
+func (t MyTransition) Label() string              { return t.lbl }
 func (t MyTransition) Destination() lts_lib.State { return t.dst }
 
 func main() {
@@ -28,10 +30,16 @@ func main() {
     s3 := MyState{name: "S3"}
     _ = lts.AddStates(s1, s2, s3)
 
-    t1 := MyTransition{src: s1, lbl: "go", dst: s2}
-    t2 := MyTransition{src: s2, lbl: "proceed", dst: s3}
+    t1 := MyTransition{src: s1, lbl: "to", dst: s2}
+    t2 := MyTransition{src: s2, lbl: "to", dst: s3}
 
     _ = lts.AddTransitions(t1, t2)
+
+
+    lts.PrintStates()
+    lts.PrintTransitions()
+
+
     lts_lib.TraverseAndPrintBFS(lts, s1)
 
     fmt.Println("Main done.")
