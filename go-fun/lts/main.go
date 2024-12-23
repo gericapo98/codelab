@@ -1,7 +1,7 @@
 package main
 import (
     "fmt"
-    "lts_lib"
+    "github.com/gericapo/codelab/lts/lts_lib"
 )
 
 type MyState struct {
