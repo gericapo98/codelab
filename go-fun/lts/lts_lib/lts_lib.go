@@ -1,12 +1,18 @@
 /*
-* TODO: methods to check if the LTS is deterministic, and to convert a non-deterministic LTS to a deterministic one
+* TODO: The task is to implement a library for working with labeled transition systems (LTSs).
+* The tasks following are unordered and will be completed based on the priority of the tasks. 1 being the highest priority and 10 being the lowest.
+* Any task that is not marked by a number will be left to the end.
+* methods to check if the LTS is deterministic, and to convert a non-deterministic LTS to a deterministic one
 * methods to check if the LTS is complete, and to convert a non-complete LTS to a complete one
-* methods that return the set of states reachable from a given state, and the set of states that can reach a given state
+* 1.methods that return the set of states reachable from a given state, and the set of states that can reach a given state
 * methods to check if the LTS is minimal, and to convert a non-minimal LTS to a minimal one
 * methods to check if the LTS is aperiodic, and to convert a periodic LTS to an aperiodic one
 * methods to check if the LTS is reversible, and to convert a non-reversible LTS to a reversible one
 * methods to check if the LTS is synchronizable, and to convert a non-synchronizable LTS to a synchronizable one
-*
+* 2.methods to check if the LTS is bisimilar to another LTS, and to compute the bisimulation relation between two LTSs
+* methods that return the set of states that are equivalent to a given state, and the set of states that are not equivalent to a given state
+* methods to check if the LTS is deadlock-free, and to convert a LTS with deadlocks to a deadlock-free one
+* Another important aspect is to write test cases for each of the methods implemented.
 */
 
 
