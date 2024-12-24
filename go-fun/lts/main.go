@@ -35,10 +35,8 @@ func main() {
 
     _ = lts.AddTransitions(t1, t2)
 
-
     lts.PrintStates()
     lts.PrintTransitions()
-
 
     lts_lib.TraverseAndPrintBFS(lts, s1)
 

@@ -1,3 +1,15 @@
+/*
+* TODO: methods to check if the LTS is deterministic, and to convert a non-deterministic LTS to a deterministic one
+* methods to check if the LTS is complete, and to convert a non-complete LTS to a complete one
+* methods that return the set of states reachable from a given state, and the set of states that can reach a given state
+* methods to check if the LTS is minimal, and to convert a non-minimal LTS to a minimal one
+* methods to check if the LTS is aperiodic, and to convert a periodic LTS to an aperiodic one
+* methods to check if the LTS is reversible, and to convert a non-reversible LTS to a reversible one
+* methods to check if the LTS is synchronizable, and to convert a non-synchronizable LTS to a synchronizable one
+*
+*/
+
+
 package lts_lib
 
 import (
