@@ -1,0 +1,16 @@
+print(10 / 3)
+print(10 // 3) # floor division
+print(10 % 3) # modulus
+print(10 ** 3) # exponentiation
+
+x=10
+x = x + 3
+x += 3
+print(x)
+
+x = 10 + 3 * 2**2
+print(x)
+#paranthesis
+#exponentiation 2**3
+#multiplication or division
+#addition or substraction
