@@ -60,6 +60,8 @@ uniques = []
 for number in numbers:
     if number not in uniques:
         uniques.append(number)
+#-------------------------------------------- #
 
-
+numbers = [1, 2, 3, 4, 5]
+x,y,z = numbers[0], numbers[1], numbers[2]
 
