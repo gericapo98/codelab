@@ -48,6 +48,18 @@ print(numbers[0:])  # Slice the list from index 0 to the end
 print(numbers[:3])  # Slice the list from the beginning to index 2
 print(numbers[0:5:2])  # Slice the list from index 0 to 4 with a step of 2
 print(numbers[::2])  # Slice the list from the beginning to the end with a step of 2
+#------------------------------------------- #
+numbers = [3, 3, 3, 4, 5]
+numbers.sort()
+print(numbers)
+numbers.sort(reverse=True)
+print(numbers)
+#------------------------------------------- #
+numbers = [2,2,4,6,3,4,6,1]
+uniques = []
+for number in numbers:
+    if number not in uniques:
+        uniques.append(number)
 
 
 
