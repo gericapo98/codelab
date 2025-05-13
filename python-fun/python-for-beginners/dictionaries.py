@@ -14,9 +14,34 @@
 # It is a collection of key-value pairs.
 
 customer = {
-    "name": "John Doe",
+    "name": "John Smith",
     "age": 30,
     "is_verified": True,
 }
-print(customer.get("birthdate", "Jan 1, 1990"))  # Returns the value for the key "birthdate" or
-# "Jan 1, 1990" if not found
+customer["name"] = "Jack Smith"
+print(customer.get("birthdate", "Jan 1, 1980"))  # Returns the value for the key "birthdate" or "Jan 1, 1990" if not found
+
+digits_mapping = {
+    "1": "one",
+    "2": "two",
+    "3": "three",
+    "4": "four",
+}
+
+
+def fizz_buzz(input):
+    if input % 3 == 0 and input % 5 == 0:
+        return "FizzBuzz"
+    elif input % 3 == 0:
+        return "Fizz"
+    elif input % 5 == 0:
+        return "Buzz"
+    else:
+        return input    
+
+if __name__ == "__main__":
+    print("\n".join(fizz_buzz(3)))
+
+# The get() method returns the value for the specified key if it exists in the dictionary.
+# If the key does not exist, it returns the default value provided as the second argument (or None if not provided).
+
