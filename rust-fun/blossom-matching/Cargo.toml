@@ -1,0 +1,7 @@
+[package]
+name = "blossom-matching"
+version = "0.1.0"
+edition = "2021"
+description = "Edmonds' Blossom algorithm: maximum matching in general graphs"
+
+[dependencies]
